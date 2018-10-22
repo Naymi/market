@@ -17,6 +17,9 @@ div
       v-btn(flat, v-for='itm in menuItems',:to='itm.route')
         v-icon(left, v-html='itm.icon')
         | {{itm.tittle}}
+      v-btn(flat, v-if='isUserAuthentificated', @click='signout')
+        v-icon(left,) exit_to_app 
+        | Выйти
 </template>
 
 <script>
@@ -33,6 +36,13 @@ export default {
       drawer: false
     }
   },
+
+  methods:{
+    signout(){
+      
+    }
+  },
+
   computed:{
     isUserAuthentificated(){
       return this.$store.getters.isUserAuthentificated
@@ -42,7 +52,6 @@ export default {
         menuitem('input','Войти','/signin'),
         menuitem('how_to_reg','Зарегистрироваться','/signup'),
       ]:[
-        menuitem('exit_to_app','Выйти','/signout'),
         menuitem('account_circle','Профиль','/profile'),
         menuitem('home','Жилые комплексы','/SHK'),
         menuitem('account_box','Квартиры','/appartaments'),
