@@ -5,7 +5,7 @@ import shk from './views/shk.vue'
 import profile from './views/profile.vue'
 import appartaments from './views/appartaments.vue'
 import dashboard from './views/dashboard.vue'
-import login from './views/login.vue'
+import signup from './views/signup.vue'
 import signin from './views/signin.vue'
 
 Vue.use(Router)
@@ -19,14 +19,14 @@ export default new Router({
       component: home
     },
     {
-      path: '/login',
-      name: 'login',
-      component: login
-    },
-    {
       path: '/signin',
       name: 'signin',
       component: signin
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: signup
     },
     {
       path: '/shk',

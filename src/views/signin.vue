@@ -13,7 +13,7 @@
                 v-text-field(id='password',prepend-icon='lock',name='password',label='password',type='password',required, v-model='password')
             v-card-actions
               v-spacer
-              v-btn(color='primary', @click.prevent='signup',:disabled='processing') Войти
+              v-btn(color='primary', @click.prevent='login',:disabled='processing') Войти
 
 </template>
 
@@ -21,8 +21,8 @@
 
 export default {
   methods:{
-    signup(){
-      this.$store.dispatch('SIGNUP', {
+    login(){
+      this.$store.dispatch('LOGIN', {
         email: this.email,
         password: this.password,
       })
@@ -38,7 +38,7 @@ export default {
     },
     isUserAuthentificated(){
       return this.$store.getters.isUserAuthentificated
-    },
+    }
   },
   watch:{
     isUserAuthentificated(val){

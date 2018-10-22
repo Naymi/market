@@ -5,7 +5,7 @@
         v-flex(xs12,sm8,md6)
           v-card.elevation-12
             v-toolbar(dark, color='primary')
-              v-toolbar-title Вход
+              v-toolbar-title Регистрация
             v-card-text
               v-alert(:value='error',type='warning',v-text='error') 
               v-form
@@ -13,7 +13,7 @@
                 v-text-field(id='password',prepend-icon='lock',name='password',label='password',type='password',required, v-model='password')
             v-card-actions
               v-spacer
-              v-btn(color='primary', @click.prevent='login',:disabled='processing') Войти
+              v-btn(color='primary', @click.prevent='signup',:disabled='processing') Зарегистрироваться
 
 </template>
 
@@ -21,8 +21,8 @@
 
 export default {
   methods:{
-    login(){
-      this.$store.dispatch('LOGIN', {
+    signup(){
+      this.$store.dispatch('SIGNUP', {
         email: this.email,
         password: this.password,
       })
@@ -38,7 +38,7 @@ export default {
     },
     isUserAuthentificated(){
       return this.$store.getters.isUserAuthentificated
-    }
+    },
   },
   watch:{
     isUserAuthentificated(val){

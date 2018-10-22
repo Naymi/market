@@ -39,8 +39,8 @@ export default {
     },
     menuItems(){
       return !this.isUserAuthentificated?[
-        menuitem('input','Войти','/login'),
-        menuitem('how_to_reg','Зарегистрироваться','/signin'),
+        menuitem('input','Войти','/signin'),
+        menuitem('how_to_reg','Зарегистрироваться','/signup'),
       ]:[
         menuitem('exit_to_app','Выйти','/signout'),
         menuitem('account_circle','Профиль','/profile'),
