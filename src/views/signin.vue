@@ -13,7 +13,7 @@
                 v-text-field(id='password',prepend-icon='lock',name='password',label='password',type='password',required, v-model='password')
             v-card-actions
               v-spacer
-              v-btn(color='primary', @click.prevent='login',:disabled='processing') Войти
+              v-btn(color='primary', @click.prevent='signin',:disabled='processing') Войти
 
 </template>
 
@@ -21,8 +21,8 @@
 
 export default {
   methods:{
-    login(){
-      this.$store.dispatch('LOGIN', {
+    signin(){
+      this.$store.dispatch('SIGNIN', {
         email: this.email,
         password: this.password,
       })

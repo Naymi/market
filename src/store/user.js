@@ -29,8 +29,7 @@ export default {
         });
 
     },
-    LOGIN({commit},payload){
-      // console.log('login')
+    SIGNIN({commit},payload){
       commit('SET_PROCESSING', !0)
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
 
