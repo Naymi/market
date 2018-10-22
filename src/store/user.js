@@ -42,7 +42,9 @@ export default {
           commit('SET_ERROR', error.message)
           commit('SET_PROCESSING', !1)
         });
-
+    },
+    SIGNOUT(){
+      firebase.auth().signOut()
     },
   },
   getters:{
