@@ -1,12 +1,22 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+v-app
+  AppHeader
+  v-content
+    router-view
+  AppFooter
 </template>
+
+<script>
+import AppHeader from "@/components/AppHeader.vue";
+import AppFooter from "@/components/AppFooter.vue";
+export default {
+  components:{
+    AppHeader,
+    AppFooter,
+  }
+}
+</script>
+
 
 <style lang="scss">
 #app {
