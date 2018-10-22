@@ -29,10 +29,7 @@ export default {
       commit('SET_PROCESSING', !0)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
 
-        .then(function (user) {
-          commit('SET_USER', user.uid)
-          commit('SET_PROCESSING', !1)
-        })
+        .then(()=>commit('SET_PROCESSING', !1))
 
         .catch(function (error) {
           commit('SET_ERROR', error.message)

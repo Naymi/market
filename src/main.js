@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig)
 Vue.use(Vuetify)
 import 'vuetify/dist/vuetify.min.css'
 
-Vue.config.productionTip = true
+Vue.config.productionTip = !1
 
 new Vue({
   created(){

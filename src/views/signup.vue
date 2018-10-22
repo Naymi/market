@@ -8,7 +8,7 @@
               v-toolbar-title Регистрация
             v-card-text
               v-alert(:value='error',type='warning',v-text='error') 
-              v-form
+              v-form(@submit='signup', tag='form')
                 v-text-field(prepend-icon='person',name='email',label='email',type='text', required,v-model='email')
                 v-text-field(id='password',prepend-icon='lock',name='password',label='password',type='password',required, v-model='password')
             v-card-actions
