@@ -39,7 +39,7 @@ export default {
 
   methods:{
     signout(){
-      
+      this.$store.dispatch('SIGNOUT')
     }
   },
 

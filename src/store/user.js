@@ -11,9 +11,20 @@ export default {
     SET_USER(state, payload){
       state.user.isAuthentificated = !0
       state.user.uid = payload
+    },
+    UNSET_USER(state,){
+      state.user.isAuthentificated = !1
+      state.user.uid = null
     }
   },
   actions: {
+    STATE_CHANGED({commit},payload){
+      if (payload) {
+        commit('SET_USER', payload.id)
+      }else{
+        commit('UNSET_USER',)
+      }
+    },
     SIGNUP({commit},payload){
       commit('SET_PROCESSING', !0)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)

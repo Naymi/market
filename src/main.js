@@ -16,6 +16,12 @@ import 'vuetify/dist/vuetify.min.css'
 Vue.config.productionTip = true
 
 new Vue({
+  created(){
+    const that=this
+    firebase.auth().onAuthStateChanged(function (user) {
+      that.$store.dispatch('STATE_CHANGED',user)
+    });
+  },
   router,
   store,
   render: h => h(App)
