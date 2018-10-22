@@ -6,12 +6,12 @@ div
         v-list-tile-action
           v-icon(left, v-html='itm.icon')
         v-list-tile-content
-          v-list-tile-tittle
+          v-list-tile-title
             | {{itm.tittle}}
   v-toolbar(app, dark,class='primary')
     v-toolbar-side-icon(@click.stop='drawer=!drawer').hidden-md-and-up
     router-link(to='/', tag='span', style='cursor:pointer')
-      v-toolbar-tittle Welcome
+      v-toolbar-title Welcome
     v-spacer
     v-toolbar-items.hidden-sm-and-down
       v-btn(flat, v-for='itm in menuItems',:to='itm.route')
