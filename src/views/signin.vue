@@ -1,5 +1,5 @@
 <template lang="pug">
-  div {{this.$store.getError}}
+  div
     v-container(fluid,fill-height)
       v-layout(align-center, justify-center, center)
         v-flex(xs12,sm8,md6)

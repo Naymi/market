@@ -42,6 +42,7 @@ export default {
         menuitem('insert_chart','Статистика','/dashboard'),
         menuitem('input','Войти','/login'),
         menuitem('how_to_reg','Зарегистрироваться','/signin'),
+        menuitem('exit_to_app','Выйти','/signout'),
       ]
     }
   }

@@ -9,7 +9,7 @@ export default {
   },
   mutations: {
     SET_USER(state, payload){
-      state.user.isAuthentificated = true
+      state.user.isAuthentificated = !0
       state.user.uid = payload
     }
   },
@@ -28,9 +28,25 @@ export default {
           commit('SET_PROCESSING', !1)
         });
 
-    }
+    },
+    LOGIN({commit},payload){
+      // console.log('login')
+      commit('SET_PROCESSING', !0)
+      firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
+
+        .then(function (user) {
+          commit('SET_USER', user.uid)
+          commit('SET_PROCESSING', !1)
+        })
+
+        .catch(function (error) {
+          commit('SET_ERROR', error.message)
+          commit('SET_PROCESSING', !1)
+        });
+
+    },
   },
   getters:{
-    isUserAuthentificated: (state) =>state.user.isAuthentificated
+    isUserAuthentificated: (state) => state.user.isAuthentificated
   }
 }
