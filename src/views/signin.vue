@@ -38,7 +38,7 @@ export default {
     },
     isUserAuthentificated(){
       return this.$store.getters.isUserAuthentificated
-    }
+    },
   },
   watch:{
     isUserAuthentificated(val){

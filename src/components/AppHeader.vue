@@ -34,15 +34,19 @@ export default {
     }
   },
   computed:{
+    isUserAuthentificated(){
+      return this.$store.getters.isUserAuthentificated
+    },
     menuItems(){
-      return [
+      return !this.isUserAuthentificated?[
+        menuitem('input','Войти','/login'),
+        menuitem('how_to_reg','Зарегистрироваться','/signin'),
+      ]:[
+        menuitem('exit_to_app','Выйти','/signout'),
         menuitem('account_circle','Профиль','/profile'),
         menuitem('home','Жилые комплексы','/SHK'),
         menuitem('account_box','Квартиры','/appartaments'),
         menuitem('insert_chart','Статистика','/dashboard'),
-        menuitem('input','Войти','/login'),
-        menuitem('how_to_reg','Зарегистрироваться','/signin'),
-        menuitem('exit_to_app','Выйти','/signout'),
       ]
     }
   }
